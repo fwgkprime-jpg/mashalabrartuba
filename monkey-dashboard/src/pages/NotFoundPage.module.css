@@ -1,0 +1,5 @@
+.notFound { display: grid; place-items: center; min-height: 24rem; border: 1px solid var(--border-panel); border-radius: var(--radius-lg); background: var(--surface-glass); text-align: center; }
+.notFound svg { width: 2rem; color: var(--accent-cyan); }
+.notFound strong { margin-top: 0.5rem; font: 700 4rem var(--font-display); color: var(--text-primary); }
+.notFound p { margin: 0 0 1rem; color: var(--text-muted); }
+.notFound a { padding: 0.65rem 0.9rem; border: 1px solid rgb(39 221 251 / 0.4); border-radius: var(--radius-sm); color: var(--accent-cyan); font: 700 0.7rem var(--font-display); letter-spacing: 0.06em; text-decoration: none; text-transform: uppercase; }

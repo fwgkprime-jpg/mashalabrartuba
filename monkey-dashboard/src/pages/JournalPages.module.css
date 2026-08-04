@@ -1,0 +1,683 @@
+.demoNotice,
+.safeNotice,
+.staleBanner {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgb(251 146 60 / 28%);
+  border-radius: 0.8rem;
+  color: #d8dee2;
+  background: rgb(251 146 60 / 7%);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.demoNotice svg,
+.safeNotice svg,
+.staleBanner svg {
+  flex: 0 0 auto;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-top: 0.08rem;
+}
+
+.demoNotice svg {
+  color: #fb923c;
+}
+
+.demoNotice strong {
+  color: #fdba74;
+}
+
+.safeNotice {
+  border-color: rgb(34 211 238 / 22%);
+  background: rgb(34 211 238 / 6%);
+}
+
+.safeNotice svg {
+  color: #67e8f9;
+}
+
+.safeNotice strong {
+  color: #a5f3fc;
+}
+
+.staleBanner {
+  border-color: rgb(250 204 21 / 25%);
+  color: #e4dca7;
+  background: rgb(250 204 21 / 6%);
+}
+
+.staleBanner svg {
+  color: #facc15;
+}
+
+.resultCount {
+  color: #9ca8ae;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+}
+
+.diaryToolbar {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+  padding: 1rem;
+  border: 1px solid #273037;
+  border-radius: 0.85rem;
+  background: rgb(11 15 17 / 62%);
+}
+
+.searchField,
+.dateField {
+  display: grid;
+  gap: 0.45rem;
+  color: #aeb8bd;
+  font-size: 0.74rem;
+  font-weight: 720;
+}
+
+.inputWithIcon {
+  position: relative;
+  display: block;
+}
+
+.inputWithIcon > svg {
+  position: absolute;
+  top: 50%;
+  left: 0.78rem;
+  z-index: 1;
+  width: 1rem;
+  height: 1rem;
+  color: #718087;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+.inputWithIcon input {
+  width: 100%;
+  min-height: 2.72rem;
+  padding: 0.65rem 0.8rem 0.65rem 2.35rem;
+  border: 1px solid #323d43;
+  border-radius: 0.65rem;
+  outline: none;
+  color: #edf2f4;
+  background: #0a0e10;
+  font: inherit;
+  font-size: 0.82rem;
+}
+
+.inputWithIcon input:focus-visible {
+  border-color: #fb923c;
+  outline: 3px solid rgb(251 146 60 / 15%);
+  outline-offset: 2px;
+}
+
+.inputWithIcon input[type="date"] {
+  color-scheme: dark;
+}
+
+.dateFields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.quickFilters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.quickFilters button[aria-pressed="true"] {
+  border-color: rgb(251 146 60 / 50%);
+  color: #fdba74;
+  background: rgb(251 146 60 / 10%);
+}
+
+.diaryList {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.diaryCard {
+  display: grid;
+  width: 100%;
+  gap: 0.85rem;
+  padding: 1rem;
+  border: 1px solid #29343a;
+  border-radius: 0.85rem;
+  outline: none;
+  color: inherit;
+  background: #101619;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    transform 160ms ease;
+}
+
+.diaryCard:hover {
+  border-color: rgb(251 146 60 / 40%);
+  background: #141b1e;
+  transform: translateY(-1px);
+}
+
+.diaryCard:focus-visible {
+  border-color: #fb923c;
+  outline: 3px solid rgb(251 146 60 / 16%);
+  outline-offset: 2px;
+}
+
+.diaryCardSelected {
+  border-color: rgb(251 146 60 / 58%);
+  background:
+    linear-gradient(135deg, rgb(251 146 60 / 8%), transparent 55%),
+    #12181b;
+  box-shadow: inset 3px 0 #fb923c;
+}
+
+.diaryCardHeader {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.diaryCardHeader > span {
+  display: grid;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.diaryCardHeader > svg {
+  flex: 0 0 auto;
+  width: 1.15rem;
+  height: 1.15rem;
+  color: #fb923c;
+}
+
+.diaryCardTitle {
+  color: #f0f3f5;
+  font-size: 0.95rem;
+  font-weight: 780;
+  line-height: 1.35;
+}
+
+.diaryCardHeader time,
+.drawerTime {
+  color: #77848a;
+  font-size: 0.7rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.entryPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+}
+
+.moodPill,
+.modePill {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.26rem 0.5rem;
+  border: 1px solid rgb(251 146 60 / 25%);
+  border-radius: 999px;
+  color: #fdba74;
+  background: rgb(251 146 60 / 7%);
+  font-size: 0.66rem;
+  font-weight: 720;
+}
+
+.modePill {
+  border-color: rgb(167 139 250 / 23%);
+  color: #c4b5fd;
+  background: rgb(167 139 250 / 6%);
+}
+
+.diaryCardConclusion {
+  display: -webkit-box;
+  overflow: hidden;
+  color: #aab4b9;
+  font-size: 0.81rem;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.diaryCardFooter {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  color: #6f7c82;
+  font-size: 0.68rem;
+  font-weight: 650;
+  letter-spacing: 0.025em;
+}
+
+.diaryDrawer {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.drawerHeading {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.drawerHeading > div {
+  min-width: 0;
+}
+
+.drawerHeading h3 {
+  margin: 0.3rem 0 0;
+  color: #f1f4f5;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.drawerEyebrow {
+  color: #fb923c;
+  font-size: 0.65rem;
+  font-weight: 780;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.entryBody {
+  margin: 0;
+  padding: 0.9rem;
+  border-left: 3px solid #fb923c;
+  color: #d5dcdf;
+  background: rgb(251 146 60 / 5%);
+  font-size: 0.86rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.diarySections {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.diarySection {
+  padding: 0.8rem;
+  border: 1px solid #273137;
+  border-radius: 0.7rem;
+  background: rgb(8 12 14 / 45%);
+}
+
+.diarySection h4,
+.relatedRuns h4 {
+  margin: 0 0 0.55rem;
+  color: #dfe5e8;
+  font-size: 0.75rem;
+  letter-spacing: 0.035em;
+}
+
+.diarySection ul,
+.relatedRuns ul {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #9ca8ae;
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.diarySection li::marker {
+  color: #fb923c;
+}
+
+.conclusion {
+  padding: 0.85rem;
+  border: 1px solid rgb(251 146 60 / 25%);
+  border-radius: 0.7rem;
+  background: rgb(251 146 60 / 5%);
+}
+
+.conclusion span {
+  color: #fb923c;
+  font-size: 0.65rem;
+  font-weight: 780;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+}
+
+.conclusion p {
+  margin: 0.45rem 0 0;
+  color: #e0e5e7;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.relatedRuns p {
+  margin: 0;
+  color: #849198;
+  font-size: 0.75rem;
+}
+
+.relatedRuns li {
+  overflow-wrap: anywhere;
+}
+
+.activityToolbar {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+  padding: 1rem;
+  border: 1px solid #273037;
+  border-radius: 0.85rem;
+  background: rgb(11 15 17 / 62%);
+}
+
+.activityToolbar > div {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.activityToolbar > p {
+  max-width: 27rem;
+  margin: 0;
+  color: #7f8b91;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  text-align: right;
+}
+
+.filterLabel {
+  color: #aeb8bd;
+  font-size: 0.7rem;
+  font-weight: 720;
+}
+
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 2.7rem minmax(0, 1fr);
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.timelineRail {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.timelineRail::after {
+  position: absolute;
+  top: 2.7rem;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: #283239;
+  content: "";
+  transform: translateX(-50%);
+}
+
+.timelineItem:last-child .timelineRail::after {
+  display: none;
+}
+
+.timelineDot {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  place-items: center;
+  border: 1px solid #334047;
+  border-radius: 50%;
+  color: #7dd3fc;
+  background: #11181b;
+}
+
+.timelineDot svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.timelineCard {
+  min-width: 0;
+  margin-bottom: 0.85rem;
+  padding: 1rem;
+  border: 1px solid #29343a;
+  border-left: 3px solid #4e6673;
+  border-radius: 0.85rem;
+  background: #101619;
+  box-shadow: 0 0.8rem 2rem rgb(0 0 0 / 12%);
+}
+
+.eventInfo {
+  border-left-color: #38bdf8;
+}
+
+.eventSuccess {
+  border-left-color: #4ade80;
+}
+
+.eventWarning {
+  border-left-color: #facc15;
+  background:
+    linear-gradient(90deg, rgb(250 204 21 / 5%), transparent 35%),
+    #101619;
+}
+
+.eventSeverityError,
+.eventError {
+  border-color: rgb(248 113 113 / 28%);
+  border-left-color: #f87171;
+  background:
+    linear-gradient(90deg, rgb(248 113 113 / 9%), transparent 40%),
+    #121617;
+}
+
+.eventRecovery {
+  border-color: rgb(74 222 128 / 28%);
+  border-left-color: #4ade80;
+  background:
+    linear-gradient(90deg, rgb(74 222 128 / 9%), transparent 40%),
+    #101719;
+}
+
+.eventError + .timelineRail .timelineDot {
+  color: #f87171;
+}
+
+.eventHeader {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.eventHeader > div {
+  min-width: 0;
+}
+
+.eventHeader h3 {
+  margin: 0.28rem 0 0;
+  color: #eef2f4;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.eventKind {
+  color: #809099;
+  font-size: 0.62rem;
+  font-weight: 780;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.eventMessage {
+  margin: 0.8rem 0;
+  color: #aeb8bd;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.eventMeta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.eventMeta > div {
+  min-width: 0;
+  padding: 0.58rem 0.65rem;
+  border: 1px solid #252f34;
+  border-radius: 0.55rem;
+  background: rgb(6 10 12 / 36%);
+}
+
+.eventMeta dt {
+  margin-bottom: 0.25rem;
+  color: #68777e;
+  font-size: 0.58rem;
+  font-weight: 760;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.eventMeta dd {
+  margin: 0;
+  color: #c4cdd1;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+.severityValue {
+  text-transform: uppercase;
+}
+
+.timestampMeta dd {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.timestampMeta span {
+  color: #76858c;
+  font-family: inherit;
+}
+
+.timelineLimit {
+  margin: 0.75rem 0 0 3.55rem;
+  padding: 0.75rem;
+  border: 1px solid rgb(250 204 21 / 20%);
+  border-radius: 0.65rem;
+  color: #a99f66;
+  background: rgb(250 204 21 / 5%);
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.spin {
+  animation: journal-spin 850ms linear infinite;
+}
+
+@keyframes journal-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .activityToolbar {
+    display: grid;
+    align-items: stretch;
+  }
+
+  .activityToolbar > p {
+    max-width: none;
+    text-align: left;
+  }
+
+  .eventMeta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .dateFields {
+    grid-template-columns: 1fr;
+  }
+
+  .quickFilters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .quickFilters button:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  .timelineItem {
+    grid-template-columns: 1.9rem minmax(0, 1fr);
+    gap: 0.55rem;
+  }
+
+  .timelineDot {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .timelineRail::after {
+    top: 2.1rem;
+  }
+
+  .eventHeader,
+  .drawerHeading {
+    display: grid;
+  }
+
+  .eventMeta {
+    grid-template-columns: 1fr;
+  }
+
+  .timelineCard {
+    padding: 0.85rem;
+  }
+
+  .timelineLimit {
+    margin-left: 2.45rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spin {
+    animation: none;
+  }
+
+  .diaryCard {
+    transition: none;
+  }
+
+  .diaryCard:hover {
+    transform: none;
+  }
+}

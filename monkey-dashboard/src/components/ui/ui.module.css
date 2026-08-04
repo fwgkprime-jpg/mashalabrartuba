@@ -1,0 +1,225 @@
+.glassPanel {
+  position: relative;
+  min-width: 0;
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(135deg, rgb(18 39 58 / 0.52), rgb(4 10 17 / 0.78)),
+    var(--surface-glass);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.035), var(--shadow-panel);
+  backdrop-filter: blur(18px);
+  overflow: hidden;
+}
+
+.glassPanel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 20%, rgb(38 218 251 / 0.035), transparent 80%);
+}
+
+.panelHeader {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-4) 0;
+}
+
+.eyebrow {
+  display: block;
+  margin-bottom: 0.2rem;
+  color: var(--text-faint);
+  font-family: var(--font-display);
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.panelTitle {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.panelAction {
+  position: relative;
+  z-index: 2;
+}
+
+.statusBadge {
+  --badge-color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.42rem;
+  width: fit-content;
+  min-height: 1.6rem;
+  padding: 0.18rem 0.58rem;
+  border: 1px solid color-mix(in srgb, var(--badge-color) 35%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--badge-color) 9%, transparent);
+  color: var(--badge-color);
+  font-family: var(--font-display);
+  font-size: 0.61rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.statusLed {
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0.65rem currentColor;
+}
+
+.tone-positive { --badge-color: var(--status-positive); }
+.tone-info { --badge-color: var(--accent-cyan); }
+.tone-warning { --badge-color: var(--status-warning); }
+.tone-danger { --badge-color: var(--status-danger); }
+.tone-muted { --badge-color: var(--text-muted); }
+.tone-mock { --badge-color: var(--accent-purple); }
+
+.pulse .statusLed {
+  animation: led-pulse 2.2s ease-in-out infinite;
+}
+
+.pageState {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 15rem;
+  padding: var(--space-6);
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.pageState svg {
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: var(--space-3);
+  color: var(--accent-cyan);
+}
+
+.pageState strong {
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+}
+
+.pageState p {
+  max-width: 32rem;
+  margin: 0.4rem 0 var(--space-4);
+  font-size: 0.88rem;
+}
+
+.spin { animation: spin 1s linear infinite; }
+
+.sparkline {
+  display: block;
+  width: 100%;
+  height: 2.7rem;
+  overflow: visible;
+}
+
+.sparkline polyline {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  filter: drop-shadow(0 0 4px currentColor);
+}
+
+.spark-cyan { color: var(--accent-cyan); }
+.spark-purple { color: var(--accent-purple); }
+.spark-green { color: var(--status-positive); }
+.spark-orange { color: var(--accent-orange); }
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.35rem;
+  padding: 0.45rem 0.82rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 750;
+  letter-spacing: 0.07em;
+  line-height: 1;
+  text-transform: uppercase;
+  transition: border-color 150ms ease, background 150ms ease, color 150ms ease, transform 150ms ease;
+}
+.button:hover:not(:disabled) { transform: translateY(-1px); }
+.button:disabled { cursor: not-allowed; opacity: 0.48; }
+.buttonIcon { display: grid; place-items: center; }
+.buttonIcon svg { width: 0.95rem; height: 0.95rem; }
+.button-primary { border-color: rgb(39 221 251 / 0.55); background: rgb(39 221 251 / 0.13); color: var(--accent-cyan); }
+.button-primary:hover:not(:disabled) { background: rgb(39 221 251 / 0.22); }
+.button-secondary { border-color: var(--border-panel); background: var(--surface-raised); color: var(--text-primary); }
+.button-secondary:hover:not(:disabled) { border-color: rgb(39 221 251 / 0.38); }
+.button-danger { border-color: rgb(255 92 117 / 0.5); background: rgb(255 92 117 / 0.12); color: var(--status-danger); }
+.button-ghost { border-color: transparent; background: transparent; color: var(--text-muted); }
+.button-ghost:hover:not(:disabled) { background: rgb(255 255 255 / 0.04); color: var(--text-primary); }
+
+.segmentedControl {
+  display: inline-flex;
+  gap: 0.2rem;
+  margin: 0;
+  padding: 0.2rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: rgb(2 8 13 / 0.68);
+}
+.segmentedControl label { position: relative; cursor: pointer; }
+.segmentedControl input { position: absolute; opacity: 0; pointer-events: none; }
+.segmentedControl span {
+  display: block;
+  padding: 0.38rem 0.58rem;
+  border-radius: 0.35rem;
+  color: var(--text-faint);
+  font: 700 0.62rem var(--font-display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.segmentedControl input:focus-visible + span { outline: 2px solid var(--accent-cyan); outline-offset: 2px; }
+.segmentActive span { background: rgb(39 221 251 / 0.12); color: var(--accent-cyan); }
+
+.dialog {
+  width: min(30rem, calc(100vw - 2rem));
+  padding: 1.4rem;
+  border: 1px solid var(--border-panel);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(145deg, #0b1824, #04090f);
+  color: var(--text-primary);
+  box-shadow: 0 2rem 6rem rgb(0 0 0 / 0.72), inset 0 1px rgb(255 255 255 / 0.05);
+}
+.dialog::backdrop { background: rgb(0 0 0 / 0.74); backdrop-filter: blur(5px); }
+.dialogIcon { width: 1.7rem; color: var(--status-warning); }
+.dialog h2 { margin: 0.75rem 2rem 0.45rem 0; font: 700 1.15rem var(--font-display); letter-spacing: 0.04em; text-transform: uppercase; }
+.dialog p { margin: 0; color: var(--text-muted); font-size: 0.85rem; line-height: 1.55; }
+.dialogClose { position: absolute; top: 0.8rem; right: 0.8rem; display: grid; place-items: center; width: 2rem; height: 2rem; padding: 0; border: 0; background: transparent; color: var(--text-muted); }
+.dialogClose svg { width: 1rem; }
+.dialogActions { display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 1.2rem; }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes led-pulse { 50% { opacity: 0.55; box-shadow: 0 0 1rem currentColor; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse .statusLed,
+  .spin { animation: none; }
+  .button { transition: none; }
+  .button:hover:not(:disabled) { transform: none; }
+}
